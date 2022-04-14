@@ -32,7 +32,7 @@ app.post('/', express.json(), (request, response) => {
 
       var config = {
         method: 'get',
-        url: `https://sheetdb.io/api/v1/qcxedxzjaynci/search?policMob=${number}`,
+        url: `https://<MY API>/search?policMob=${number}`,
         headers: {}
       };
 
@@ -50,7 +50,7 @@ app.post('/', express.json(), (request, response) => {
   function save(number) {
     return new Promise(resolve => {
       var axios = require('axios');
-      axios.post('https://sheetdb.io/api/v1/qcxedxzjaynci',{
+      axios.post('https://<MY API>',{
         "data": {"id": "", "policMob": `${number}`}
     })
         .then(function (response) {
